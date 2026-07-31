@@ -1,10 +1,9 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { Header } from "./components/Header.jsx"
 import { WriteArea } from "./components/WriteArea.jsx"
 import { Controlls } from "./components/Controlls.jsx"
 import { Stats } from "./components/Stats.jsx"
 import { LetterDensity } from "./components/LetterDensity.jsx"
-import { ThemeContext } from "./context/ThemeContext.jsx"
 
 const App = () => {
   const [text, setText] = useState("Esto es un texto de prueba, puedes borrarlo, modificarlo o comprobar que la app esta funcionando correctamente.")
@@ -14,21 +13,18 @@ const App = () => {
   const [limitValue, setLimitValue] = useState(10)
   const [showAll, setShowAll] = useState(false)
 
-  const { dark, handleDarkTheme } = useContext(ThemeContext)
-
   const handleExcludeSpaces = () => {
     setExcludeSpaces(!excludeSpaces)
   }
 
-  const handleLimitValue = () => {
-    setLimitValue(!limitCharacter)
+  const handleLimitValue = (e) => {
+    setLimitValue(e.target.value)
   }
 
   const handleChangeTextarea = (e) => {
     const value = e.target.value
 
     if (limitCharacter) {
-
       if (value.length <= limitValue) {
         setText(value)
       }
@@ -77,10 +73,9 @@ const App = () => {
 
   const visibleLetters = showAll ? sortLetters : sortLetters.slice(0, 5)
 
-
   return (
-    <main className={`${dark ? "dark-theme" : ""}`}>
-      <Header handleDarkTheme={handleDarkTheme} />
+    <main>
+      <Header />
       <h2>Analiza el texto <br />
         en tiempo real.</h2>
       <WriteArea
