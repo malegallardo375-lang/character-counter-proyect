@@ -1,10 +1,18 @@
 const Stats = ({ characters, words, sentences, readingTime }) => {
   return (
-    <div>
-      <p>Cantidad de caracteres: {characters}</p>
-      <p>Cantidad de palabras: {words}</p>
-      <p>Cantidad de oraciones: {sentences}</p>
-      <p>Tiempo de lectura: ~{readingTime} min</p>
+    <div className="stats">
+      <div className="card purple">
+        <h2>{characters}</h2>
+        <p>Cantidad de caracteres</p>
+      </div>
+      <div className="card coral">
+        <h2>{words}</h2>
+        <p>Cantidad de palabras</p>
+      </div>
+      <div className="card orange">
+        <h2>{sentences}</h2>
+        <p>Cantidad de oraciones</p>
+      </div>
     </div>
   )
 }
