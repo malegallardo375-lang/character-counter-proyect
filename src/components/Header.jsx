@@ -1,13 +1,15 @@
-import { useState } from "react"
+import { useState } from "react";
+import logoImg from "../assets/logo.png"; // 1. Importas la imagen
 
-const Header = ({ dark, handleDarkTheme }) => {
-  return <header>
-    <div>
-      <p>C</p>
-      <h1>Character Counter UTN</h1>
-    </div>
-    <button onClick={() => handleDarkTheme(!dark)}>☀</button>
-  </header>
-}
-
+const Header = () => {
+  return (
+    <header>
+      <div className="logo">
+        <img src={logoImg} alt="Logo" /> {/* 2. Usas la variable con llaves */}
+        <span>Contador de caracteres UTN</span>
+      </div>
+      <button className="settings-btn">☀️</button>
+    </header>
+  );
+};
 export { Header }

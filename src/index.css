@@ -28,3 +28,78 @@ body {
     margin: 0 auto;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alineado al centro vertical */
+    padding: 20px 25px;
+    border-radius: 16px;
+    flex: 1;
+    min-height: 130px;
+    position: relative;
+    overflow: hidden;
+    color: #12131A; /* Texto oscuro para contraste */
+}
+
+.card h2 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+    color: #12131A;
+}
+
+.card p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #12131A;
+}
+
+.density-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 0;
+    font-size: 15px;
+}
+
+.density-item span:first-child {
+    width: 15px; /* Para que todas las letras midan lo mismo */
+    font-weight: 600;
+}
+
+.bar-container {
+    flex: 1;
+    height: 12px;
+    background-color: var(--textarea-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background-color: var(--purple-card); /* Mismo color morado pastel */
+    border-radius: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 24px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
