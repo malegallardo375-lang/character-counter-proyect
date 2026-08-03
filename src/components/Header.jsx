@@ -1,10 +1,7 @@
-
-import logoImg from "../assets/logo.png"; // 1. Importas la imagen
-
 const Header = () => {
   return (
-    <header>
-      <div>
+    <header className="header">
+      <div className="header-logo">
         <p>C</p>
         <h1>Character Counter UTN</h1>
       </div>

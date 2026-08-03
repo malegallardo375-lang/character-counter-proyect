@@ -7,12 +7,12 @@ const Controlls = ({
   handleLimitValue,
 }) => {
   return (
-    <div>
+    <div className="controls">
       <label>
         <input
           type="checkbox"
           checked={excludeSpaces}
-          onChange={() => handleExcludeSpaces()}
+          onChange={handleExcludeSpaces}
         />
         Excluir espacios
       </label>
@@ -28,6 +28,7 @@ const Controlls = ({
 
       {limitCharacter && (
         <input
+          className="limit-input"
           type="number"
           value={limitValue}
           onChange={(e) => handleLimitValue(e.target.value)}

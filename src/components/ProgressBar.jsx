@@ -1,9 +1,18 @@
 const ProgressBar = ({ letter }) => {
   return (
-    <li key={letter.letterName}>
+    <li className="progress-item">
       <span>{letter.letterName.toUpperCase()}</span>
-      <meter min="0" max="100" value={letter.percentage}></meter>
-      <span>{letter.amount} ({letter.percentage.toFixed(1)}%)</span>
+
+      <meter
+        className="progress-bar"
+        min="0"
+        max="100"
+        value={letter.percentage}
+      ></meter>
+
+      <span>
+        {letter.amount} ({letter.percentage.toFixed(1)}%)
+      </span>
     </li>
   )
 }
