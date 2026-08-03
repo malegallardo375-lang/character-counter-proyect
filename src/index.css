@@ -42,27 +42,13 @@ main {
 .header-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
-.header-logo p {
-  width: 50px;
-  height: 50px;
-  background-color: #6C63FF;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  border-radius: 12px;
-
-  background:linear-gradient(
-        135deg,
-        #8b5cf6,
-        #4f46e5
-    );
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header-logo img {
+   width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .header-logo h1 {
@@ -78,9 +64,10 @@ font-weight:800;
 
 main h2 {
   text-align: center;
-  font-size: 42px;
+  font-size: 56px;
+  font-weight:800;
   margin-bottom: 40px;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 /* ===========================
@@ -89,7 +76,7 @@ main h2 {
 
 .write-area {
   width: 100%;
-  min-height: 220px;
+  min-height: 240px;
 
   padding: 20px;
 
@@ -122,6 +109,7 @@ main h2 {
 }
 
 .write-area:focus {
+  outline:none;
   border-color: #6C63FF;
   box-shadow: 0 0 0 4px rgba(108, 99, 255, .15);
 }
@@ -133,10 +121,10 @@ main h2 {
 .controls {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
-
-  margin-bottom: 40px;
+  margin-top:25px;
+  margin-bottom: 45px;
 }
 
 .controls label {
@@ -202,21 +190,61 @@ main h2 {
 
 .card {
   padding: 30px;
-  border-radius: 18px;
+  height:170px;
+  border-radius: 22px;
   color: white;
+  position:relative;
+  overflow:hidden;
   transition:
         transform .25s,
         box-shadow .25s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-     box-shadow:0 18px 30px rgba(0,0,0,.12);
+  transform: translateY(-10px);
+             scale:(1.02);
+  box-shadow:0 18px 30px rgba(0,0,0,.12);
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    top:-70px;
+    right:-70px;
+
+}
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    bottom:-40px;
+    left:-40px;
+
 }
 
 .card h3 {
-  font-size: 64px;
-font-weight:700;
+  font-size: 60px;
+  font-weight:700;
   margin-bottom: 10px;
 }
 
@@ -257,39 +285,69 @@ font-weight:700;
 =========================== */
 
 .letter-density h2 {
-  margin-bottom: 20px;
+font-size: 34px;
+  margin-bottom: 25px;
 }
 
-.progress-item {
-  display: grid;
-  grid-template-columns: 40px 1fr 120px;
-  align-items: center;
-
-  gap: 15px;
-
-  margin-bottom: 15px;
-
-  list-style: none;
+.progress-item{
+    display:grid;
+    grid-template-columns:40px 1fr 120px;
+    align-items:center;
+    gap:20px;
+    list-style:none;
+    margin-bottom:18px;
 }
 
-.progress-bar {
-  width: 100%;
-  height: 14px;
+.letter{
+    font-weight:700;
 }
+
+.letter-density{
+    margin-top:70px;
+}
+
+.progress-track{
+    width:100%;
+    height:12px;
+    background:#e5e7eb;
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    background:linear-gradient(90deg,#8b5cf6,#4f46e5);
+    border-radius:999px;
+    transition:width .4s ease;
+}
+
+.progress-info{
+    text-align:right;
+    font-size:14px;
+    color:#555;
+}
+
+
 
 details {
   margin-top: 20px;
 }
 
-summary {
-  cursor: pointer;
-  font-weight: bold;
-  color: #6C63FF;
-  transition: .2s;
+summary{
+    display:inline-block;
+    margin-top:20px;
+
+    color:#4f46e5;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
 }
 
-summary:hover {
-  color: #4f46e5;
+summary:hover{
+    color:#312e81;
 }
 
 .meter-list {
