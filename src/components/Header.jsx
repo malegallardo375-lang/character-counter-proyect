@@ -3,7 +3,7 @@ const Header = () => {
     <header className="header">
       <div className="header-logo">
         <p>C</p>
-        <h1>Character Counter UTN</h1>
+        <h1>Character Counter</h1>
       </div>
     </header>
   )
