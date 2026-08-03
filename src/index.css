@@ -12,10 +12,10 @@
    BODY
 =========================== */
 
-body {
-  background-color: #f5f7fa;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #222;
+body{
+    background:#f5f7fa;
+    font-family:"DM Sans",sans-serif;
+    color:#222;
 }
 
 /* ===========================
@@ -36,7 +36,7 @@ main {
 .header {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .header-logo {
@@ -50,9 +50,15 @@ main {
   height: 50px;
   background-color: #6C63FF;
   color: white;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
   border-radius: 12px;
+
+  background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #4f46e5
+    );
 
   display: flex;
   justify-content: center;
@@ -60,7 +66,10 @@ main {
 }
 
 .header-logo h1 {
-  font-size: 30px;
+ font-size:34px;
+
+font-weight:800;
+
 }
 
 /* ===========================
@@ -70,7 +79,7 @@ main {
 main h2 {
   text-align: center;
   font-size: 42px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   line-height: 1.2;
 }
 
@@ -134,22 +143,50 @@ main h2 {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-weight:500;
 
   cursor: pointer;
 }
+.controls input[type="checkbox"]{
+    appearance:none;
 
-.controls input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+    width:20px;
+    height:20px;
+
+    border:2px solid #6C63FF;
+    border-radius:6px;
+
+    cursor:pointer;
+
+    transition:.2s;
 }
 
-.limit-input {
-  width: 80px;
+.controls input[type="checkbox"]:checked{
+    background:#6C63FF;
+}
 
-  padding: 8px;
+.limit-input{
 
-  border: 1px solid #ccc;
-  border-radius: 8px;
+    width:70px;
+
+    padding:10px;
+
+    text-align:center;
+
+    font-size:16px;
+
+    border-radius:10px;
+    border:2px solid #ddd;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+.limit-input:focus{
+
+    border-color:#6C63FF;
+
 }
 
 /* ===========================
@@ -158,27 +195,58 @@ main h2 {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
-.stats p {
-  background: white;
-  padding: 20px;
-
-  border-radius: 12px;
-
-  font-size: 18px;
-  font-weight: 600;
-
-  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+.card {
+  padding: 30px;
+  border-radius: 18px;
+  color: white;
+  transition:
+        transform .25s,
+        box-shadow .25s;
 }
 
-.stats p {
-  transition: .25s;
+.card:hover {
+  transform: translateY(-8px);
+     box-shadow:0 18px 30px rgba(0,0,0,.12);
 }
+
+.card h3 {
+  font-size: 64px;
+font-weight:700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  opacity: .95;
+   margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  font-weight: 500;
+}
+
+.purple {
+  background: linear-gradient(135deg, #d8b4fe, #a855f7);
+}
+
+.yellow {
+  background: linear-gradient(135deg, #fde68a, #facc15);
+  color: #222;
+}
+
+.orange {
+  background: linear-gradient(135deg, #fdba74, #f97316);
+}
+
+.blue {
+  background: linear-gradient(135deg, #93c5fd, #3b82f6);
+}
+
 
 .stats p:hover {
   transform: translateY(-4px);
