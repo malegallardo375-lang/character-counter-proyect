@@ -14,14 +14,16 @@ const App = () => {
   const [limitCharacter, setLimitCharacter] = useState(false)
   const [limitValue, setLimitValue] = useState(10)
   const [showAll, setShowAll] = useState(false)
+  const [dark, setDark] = useState(false)
 
+  // Handlers
   const handleExcludeSpaces = () => {
     setExcludeSpaces(!excludeSpaces)
   }
 
- const handleLimitValue = (value) => {
-  setLimitValue(Number(value))
-}
+  const handleLimitValue = (value) => {
+    setLimitValue(Number(value))
+  }
 
   const handleChangeTextarea = (e) => {
     const value = e.target.value
@@ -35,10 +37,16 @@ const App = () => {
     }
   }
 
- const handleChangeInputLimit = () => {
-  setLimitCharacter(!limitCharacter)
-}
+  const handleChangeInputLimit = () => {
+    setLimitCharacter(!limitCharacter)
+  }
 
+  // ✅ MOVIDA AQUÍ: Ahora está en el nivel superior del componente
+  const handleDarkTheme = () => {
+    setDark(!dark)
+  }
+
+  // Cálculos de estadísticas
   const characters = excludeSpaces
     ? text.replace(/\s/g, "").length
     : text.length
@@ -85,8 +93,11 @@ const App = () => {
     : sortLetters.slice(0, 5)
 
   return (
-    <main>
-      <Header />
+    <main className={dark ? "dark-theme" : ""}>
+      <Header 
+        dark={dark}
+        handleDarkTheme={handleDarkTheme}
+      />
 
       <h2>
         Analiza el texto <br />
