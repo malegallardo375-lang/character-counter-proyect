@@ -15,7 +15,10 @@ const App = () => {
   const [limitCharacter, setLimitCharacter] = useState(false)
   const [limitValue, setLimitValue] = useState(10)
   const [showAll, setShowAll] = useState(false)
-  const [dark, setDark] = useState(false)
+ const [dark, setDark] = useState(() => {
+  const savedTheme = localStorage.getItem("darkMode")
+  return savedTheme === "true"
+})
 
   // Handlers
   const handleExcludeSpaces = () => {
@@ -47,9 +50,11 @@ const App = () => {
     setDark(!dark)
   }
 
+
   useEffect(() => {
   document.body.classList.toggle("dark-theme", dark)
-}, [dark])
+  localStorage.setItem("darkMode", dark)}, [dark])
+
 
   // Cálculos de estadísticas
   const characters = excludeSpaces

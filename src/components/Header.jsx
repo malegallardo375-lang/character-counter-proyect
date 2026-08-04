@@ -7,7 +7,7 @@ const Header = ({ dark, handleDarkTheme }) => {
 
   return (
     <header className="header">
-  <div className="header-left">
+  <div className="header-logo">
     <img src={logo} alt="Logo" />
     <h1>Contador de caracteres</h1>
   </div>
