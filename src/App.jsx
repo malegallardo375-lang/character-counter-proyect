@@ -69,7 +69,10 @@ const App = () => {
           .filter((sentence) => sentence.trim() !== "")
           .length
 
-  const readingTime = Math.ceil(words / 180)
+  const readingTime =
+    words === 0 ? "-" : words < 180 ? "<1" : Math.ceil(words / 180)
+  
+  
 
   const cleanText = text.toLowerCase().replace(/[^a-záéíóúü]/g, "")
   const total = cleanText.length
