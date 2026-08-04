@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Header } from "./components/Header.jsx"
 import { WriteArea } from "./components/WriteArea.jsx"
 import { Controlls } from "./components/Controlls.jsx"
 import { Stats } from "./components/Stats.jsx"
 import { LetterDensity } from "./components/LetterDensity.jsx"
+
 
 const App = () => {
   const [text, setText] = useState(
@@ -45,6 +46,10 @@ const App = () => {
   const handleDarkTheme = () => {
     setDark(!dark)
   }
+
+  useEffect(() => {
+  document.body.classList.toggle("dark-theme", dark)
+}, [dark])
 
   // Cálculos de estadísticas
   const characters = excludeSpaces

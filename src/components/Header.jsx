@@ -1,18 +1,24 @@
 import { useState } from "react"
+import { Moon, Sun } from "lucide-react";
 import logo from "../assets/logo.png"
+
 
 const Header = ({ dark, handleDarkTheme }) => {
 
   return (
-    <header className="header" >
-      <div className="header-logo">
-        <img src={logo} alt="Character Counter Logo" />
-        <h1>Character Counter</h1>
-      </div>
-      <button onClick={handleDarkTheme} className="theme-toggle-btn">
-        {dark ? "☀️" : "🌙"}
-      </button>
-    </header>
+    <header className="header">
+  <div className="header-left">
+    <img src={logo} alt="Logo" />
+    <h1>Contador de caracteres</h1>
+  </div>
+
+  <button
+    className="theme-toggle-btn"
+    onClick={handleDarkTheme}
+  >
+    {dark ? <Sun size={20} /> : <Moon size={20} />}
+  </button>
+</header>
   )
 }
 
