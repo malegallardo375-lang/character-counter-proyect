@@ -113,8 +113,8 @@ const App = () => {
       />
 
       <h2>
-        Analiza el texto <br />
-        en tiempo real.
+       Analyze the text <br />
+        in real time
       </h2>
 
       <WriteArea

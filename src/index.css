@@ -21,7 +21,7 @@ body {
 }
 
 body.dark-theme {
-  color: white;
+  background: #12131a;
 }
 
 
@@ -31,18 +31,21 @@ body.dark-theme {
 
 main {
   width: 100%;
-  min-height:100vh;
-  padding:40px;
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 1200px;
+  min-height: 100vh;
+
+  margin: 0 auto;
+  padding: 40px;
+
+  box-sizing: border-box;
+
   animation: fadeUp .6s ease;
 }
 
-.container{
-    width:90%;
-    max-width:900px;
-    margin:0 auto;
+main.dark-theme {
+  background: transparent;
 }
+
 
 
 /* ===========================
